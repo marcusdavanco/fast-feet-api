@@ -14,7 +14,8 @@ interface ParcelProps {
     city: string
     state: string    
     postalCode: string
-  }  
+  }
+  isDelivered: boolean  
 }
 
 export class Parcel extends Entity<ParcelProps> {
