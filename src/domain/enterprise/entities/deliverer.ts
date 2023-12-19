@@ -2,7 +2,7 @@ import { Entity } from "@/core/entities/entity"
 import { VehicleType } from "./vehicleTypes"
 import { UniqueEntityID } from "@/core/entities/unique-entity-id"
 
-interface DelivererProps {
+export interface DelivererProps {
   name: string,
   email: string,
   phoneNumber: string,
