@@ -1,19 +1,19 @@
 import { Entity } from "@/core/entities/entity";
-import { Status } from "./Status";
+import { Status } from "./status";
 import { Deliverer } from "./deliverer";
 import { Recipient } from "./recipient";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
 
 interface ParcelProps {
   deliverer?: Deliverer
-  recipient?: Recipient
+  recipient: Recipient
   status: Status
   deliveryAddress: {
     street: string
+    neighborhood: string
     city: string
-    state: string
+    state: string    
     postalCode: string
-    country: string
   }  
 }
 

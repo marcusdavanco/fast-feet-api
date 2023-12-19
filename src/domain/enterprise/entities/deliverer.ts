@@ -1,5 +1,5 @@
 import { Entity } from "@/core/entities/entity"
-import { VehicleType } from "./VehicleTypes"
+import { VehicleType } from "./vehicleTypes"
 import { UniqueEntityID } from "@/core/entities/unique-entity-id"
 
 interface DelivererProps {
