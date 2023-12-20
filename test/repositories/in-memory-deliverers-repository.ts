@@ -6,7 +6,13 @@ export class InMemoryDeliverersRepository implements DeliverersRepository {
   public items: Deliverer[] = []
   
   async findbyId(id: string): Promise<Deliverer | null> {
-    throw new Error("Method not implemented.");
+    const deliverer = this.items.find(deliverer => deliverer.id.toString() === id) || null
+
+    if (!deliverer) {
+      return null
+    }
+
+    return deliverer
   }
   async findManyRecent(params: PaginationParams): Promise<Deliverer[]> {
     throw new Error("Method not implemented.");
