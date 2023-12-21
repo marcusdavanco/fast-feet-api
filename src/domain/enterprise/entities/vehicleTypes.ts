@@ -7,5 +7,5 @@ export enum VehicleType {
   MOTORCYCLE,
   ELECTRIC_VEHICLE,
   WALKING,
-  OTHER
+  OTHER,
 }
