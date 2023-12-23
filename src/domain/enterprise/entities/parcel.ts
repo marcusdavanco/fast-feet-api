@@ -1,21 +1,21 @@
-import { Entity } from "@/core/entities/entity";
-import { Status } from "./status";
-import { Deliverer } from "./deliverer";
-import { Recipient } from "./recipient";
-import { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import { Entity } from '@/core/entities/entity'
+import { Status } from './status'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 
-interface ParcelProps {
-  deliverer?: Deliverer
-  recipient: Recipient
+export interface Address {
+  street: string
+  neighborhood: string
+  city: string
+  state: string
+  postalCode: string
+}
+
+export interface ParcelProps {
+  delivererId?: UniqueEntityID
+  recipientId: UniqueEntityID
   status: Status
-  deliveryAddress: {
-    street: string
-    neighborhood: string
-    city: string
-    state: string    
-    postalCode: string
-  }
-  isDelivered: boolean  
+  deliveryAddress: Address
+  isDelivered: boolean
 }
 
 export class Parcel extends Entity<ParcelProps> {
