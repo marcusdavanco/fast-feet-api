@@ -13,5 +13,7 @@ describe('Create Parcel Use Case', () => {
 
   it('Should create a new parcel', async () => {
     const newParcel = makeParcel()
+
+    sut.execute(newParcel)
   })
 })

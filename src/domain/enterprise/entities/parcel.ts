@@ -16,6 +16,8 @@ export interface ParcelProps {
   status: Status
   deliveryAddress: Address
   isDelivered: boolean
+  createdAt: Date
+  updatedAt?: Date | null
 }
 
 export class Parcel extends Entity<ParcelProps> {
@@ -23,5 +25,46 @@ export class Parcel extends Entity<ParcelProps> {
     const parcel = new Parcel(props, id)
 
     return parcel
+  }
+
+  get delivererId() {
+    return this.props.delivererId
+  }
+
+  set delivererId(id: UniqueEntityID | undefined) {
+    if (id !== undefined) {
+      this.props.delivererId = id
+      this.touch()
+    }
+  }
+
+  get recipientId() {
+    return this.props.recipientId
+  }
+
+  set recipientId(id: UniqueEntityID) {
+    this.props.recipientId = id
+    this.touch()
+  }
+
+  get status() {
+    return this.props.status
+  }
+
+  get deliveryAddress() {
+    return this.props.deliveryAddress
+  }
+
+  get isDelivered() {
+    return this.props.isDelivered
+  }
+
+  set isDelivered(isDelivered: boolean) {
+    this.props.isDelivered = isDelivered
+    this.touch()
+  }
+
+  private touch() {
+    this.props.updatedAt = new Date()
   }
 }
