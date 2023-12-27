@@ -1,6 +1,7 @@
 import { Entity } from '@/core/entities/entity'
 import { Status } from './status'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { Optional } from '@/core/types/optional'
 
 export interface Address {
   street: string
@@ -21,8 +22,14 @@ export interface ParcelProps {
 }
 
 export class Parcel extends Entity<ParcelProps> {
-  static create(props: ParcelProps, id?: UniqueEntityID) {
-    const parcel = new Parcel(props, id)
+  static create(
+    props: Optional<ParcelProps, 'createdAt'>,
+    id?: UniqueEntityID,
+  ) {
+    const parcel = new Parcel(
+      { ...props, createdAt: props.createdAt ?? new Date() },
+      id,
+    )
 
     return parcel
   }
