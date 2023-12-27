@@ -11,7 +11,7 @@ export interface Address {
 }
 
 export interface ParcelProps {
-  delivererId?: UniqueEntityID
+  delivererId: UniqueEntityID
   recipientId: UniqueEntityID
   status: Status
   deliveryAddress: Address
@@ -31,20 +31,8 @@ export class Parcel extends Entity<ParcelProps> {
     return this.props.delivererId
   }
 
-  set delivererId(id: UniqueEntityID | undefined) {
-    if (id !== undefined) {
-      this.props.delivererId = id
-      this.touch()
-    }
-  }
-
   get recipientId() {
     return this.props.recipientId
-  }
-
-  set recipientId(id: UniqueEntityID) {
-    this.props.recipientId = id
-    this.touch()
   }
 
   get status() {
