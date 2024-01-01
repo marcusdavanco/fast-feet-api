@@ -46,7 +46,7 @@ export class UpdateDelivererInformationUseCase {
     phoneNumber,
     vehicleInformation,
   }: UpdateDelivererUseCaseRequest): Promise<UpdateDelivererUseCaseReponse> {
-    const deliverer = await this.deliverersRepository.findbyId(id)
+    const deliverer = await this.deliverersRepository.findById(id)
 
     if (!deliverer) {
       return left(new ResourceNotFoundError())

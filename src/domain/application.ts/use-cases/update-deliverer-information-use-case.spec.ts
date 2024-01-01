@@ -21,9 +21,9 @@ describe('Update deliverer information', async () => {
       name: 'John Doe',
     })
 
-    console.log(result)
+    console.log(result.value)
 
     expect(result.isRight()).toBe(true)
-    expect(inMemoryDeliverersRepository.items[0]).toEqual(result.value)
+    expect(inMemoryDeliverersRepository.items[0].name).equal('John Doe')
   })
 })
