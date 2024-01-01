@@ -18,7 +18,7 @@ export class DeleteDelivererUseCase {
   async execute({
     id,
   }: DeleteDelivererUseCaseRequest): Promise<DeleteDelivererUseCaseResponse> {
-    const deliverer = await this.deliverersRepository.findbyId(id)
+    const deliverer = await this.deliverersRepository.findById(id)
 
     if (!deliverer) {
       return left(new ResourceNotFoundError())
