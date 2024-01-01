@@ -1,28 +1,28 @@
-import { Either, left, right } from "@/core/either";
-import { DeliverersRepository } from "../repositories/deliverers-repository";
-import { Deliverer } from "@/domain/enterprise/entities/deliverer";
-import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
+import { Either, left, right } from '@/core/either'
+import { DeliverersRepository } from '../repositories/deliverers-repository'
+import { Deliverer } from '@/domain/enterprise/entities/deliverer'
+import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 
 interface GetDelivererByIdUseCaseRequest {
-id: string
+  id: string
 }
 
 type GetDelivererUseCaseReponse = Either<
-ResourceNotFoundError,
-{
-  deliverer: Deliverer
-}
+  ResourceNotFoundError,
+  {
+    deliverer: Deliverer
+  }
 >
 
 export class GetDelivererByIdUseCase {
   constructor(private deliverersRepository: DeliverersRepository) {}
 
   async execute({
-    id
+    id,
   }: GetDelivererByIdUseCaseRequest): Promise<GetDelivererUseCaseReponse> {
-    const deliverer = await this.deliverersRepository.findbyId(id)
+    const deliverer = await this.deliverersRepository.findById(id)
 
-    if(!deliverer) {
+    if (!deliverer) {
       return left(new ResourceNotFoundError())
     }
 

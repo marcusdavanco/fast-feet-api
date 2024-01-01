@@ -5,7 +5,7 @@ import { Deliverer } from '@/domain/enterprise/entities/deliverer'
 export class InMemoryDeliverersRepository implements DeliverersRepository {
   public items: Deliverer[] = []
 
-  async findbyId(id: string): Promise<Deliverer | null> {
+  async findById(id: string): Promise<Deliverer | null> {
     const deliverer =
       this.items.find((deliverer) => deliverer.id.toString() === id) || null
 
