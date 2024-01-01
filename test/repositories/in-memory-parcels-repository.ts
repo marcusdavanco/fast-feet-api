@@ -5,8 +5,10 @@ import { Parcel } from '@/domain/enterprise/entities/parcel'
 export class InMemoryParcelsRepository implements ParcelsRepository {
   public items: Parcel[] = []
 
-  findById(id: string): Promise<Parcel | null> {
-    throw new Error('Method not implemented.')
+  async findById(id: string): Promise<Parcel | null> {
+    const index = this.items.findIndex((parcel) => parcel.id.toString() === id)
+
+    return this.items[index]
   }
 
   findManyByDelivererId(
