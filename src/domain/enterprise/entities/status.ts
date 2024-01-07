@@ -4,5 +4,5 @@ export enum Status {
   OUT_FOR_DELIVERY = 'Out for Delivery',
   DELIVERED = 'Delivered',
   RETURNED = 'Returned',
-  CANCELED = 'Canceled'
+  CANCELED = 'Canceled',
 }

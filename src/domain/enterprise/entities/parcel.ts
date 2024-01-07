@@ -38,16 +38,36 @@ export class Parcel extends Entity<ParcelProps> {
     return this.props.delivererId
   }
 
+  set delivererId(id) {
+    this.props.delivererId = id
+    this.touch()
+  }
+
   get recipientId() {
     return this.props.recipientId
+  }
+
+  set recipientId(id) {
+    this.props.recipientId = id
+    this.touch()
   }
 
   get status() {
     return this.props.status
   }
 
+  set status(status) {
+    this.props.status = status
+    this.touch()
+  }
+
   get deliveryAddress() {
     return this.props.deliveryAddress
+  }
+
+  set deliveryAddress(address: Address) {
+    this.props.deliveryAddress = address
+    this.touch()
   }
 
   get isDelivered() {

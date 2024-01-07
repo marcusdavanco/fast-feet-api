@@ -20,8 +20,6 @@ describe('GetParcelByIdUseCase', async () => {
 
     const result = await sut.execute({ id: newParcelId })
 
-    console.log(result.value)
-
     expect(result.isRight()).toBe(true)
   })
 

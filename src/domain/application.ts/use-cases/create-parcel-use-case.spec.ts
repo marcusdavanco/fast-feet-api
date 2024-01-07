@@ -26,9 +26,7 @@ describe('Create Parcel Use Case', () => {
       status: Status.PENDING_PICKUP,
     })
 
-    console.log(result)
-
-    // expect(result.isRight()).toBe(true)
-    // expect(inMemoryParcelsRepository.items[0]).toEqual(result.value?.parcel)
+    expect(result.isRight()).toBe(true)
+    expect(inMemoryParcelsRepository.items[0]).toEqual(result.value?.parcel)
   })
 })

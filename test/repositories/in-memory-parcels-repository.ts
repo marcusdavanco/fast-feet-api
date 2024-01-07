@@ -36,8 +36,4 @@ export class InMemoryParcelsRepository implements ParcelsRepository {
 
     this.items[parcelIndex] = parcel
   }
-
-  update(parcel: Parcel): Promise<void> {
-    throw new Error('Method not implemented.')
-  }
 }
