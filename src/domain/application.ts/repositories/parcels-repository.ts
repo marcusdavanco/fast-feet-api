@@ -13,4 +13,5 @@ export interface ParcelsRepository {
   ): Promise<Parcel[]>
   create(parcel: Parcel): Promise<void>
   save(parcel: Parcel): Promise<void>
+  delete(parcelId: string): Promise<void>
 }

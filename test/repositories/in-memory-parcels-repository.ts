@@ -36,4 +36,12 @@ export class InMemoryParcelsRepository implements ParcelsRepository {
 
     this.items[parcelIndex] = parcel
   }
+
+  async delete(parcelId: string) {
+    const parcelIndex = this.items.findIndex(
+      (parcel) => parcel.id.toString() === parcelId,
+    )
+
+    this.items.splice(parcelIndex, 1)
+  }
 }
