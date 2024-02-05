@@ -1,5 +1,5 @@
 import { InMemoryParcelsRepository } from 'test/repositories/in-memory-parcels-repository'
-import { CreateParcelUseCase } from './create-parcel-use-case'
+import { CreateParcelUseCase } from '../parcel/create-parcel-use-case'
 import { Status } from '@/domain/enterprise/entities/status'
 
 let inMemoryParcelsRepository: InMemoryParcelsRepository

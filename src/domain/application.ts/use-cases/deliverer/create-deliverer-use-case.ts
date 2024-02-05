@@ -1,5 +1,5 @@
 import { Deliverer } from '@/domain/enterprise/entities/deliverer'
-import { DeliverersRepository } from '../repositories/deliverers-repository'
+import { DeliverersRepository } from '../../repositories/deliverers-repository'
 import { Either, right } from '@/core/either'
 import { VehicleType } from '@/domain/enterprise/entities/vehicleTypes'
 

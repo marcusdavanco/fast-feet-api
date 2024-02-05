@@ -1,5 +1,5 @@
 import { InMemoryDeliverersRepository } from 'test/repositories/in-memory-deliverers-repository'
-import { GetDelivererByIdUseCase } from './get-deliverer-by-id-use-case'
+import { GetDelivererByIdUseCase } from '../deliverer/get-deliverer-by-id-use-case'
 import { makeDeliverer } from 'test/factories/make-deliverer'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 

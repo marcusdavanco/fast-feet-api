@@ -1,33 +1,31 @@
 import { Either, left, right } from '@/core/either'
-import { DeliverersRepository } from '../repositories/deliverers-repository'
-import { Deliverer } from '@/domain/enterprise/entities/deliverer'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
+import { DeliverersRepository } from '../../repositories/deliverers-repository'
 
-interface GetDelivererByIdUseCaseRequest {
+interface DeleteDelivererUseCaseRequest {
   id: string
 }
 
-type GetDelivererUseCaseReponse = Either<
+type DeleteDelivererUseCaseResponse = Either<
   ResourceNotFoundError,
-  {
-    deliverer: Deliverer
-  }
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  {}
 >
 
-export class GetDelivererByIdUseCase {
+export class DeleteDelivererUseCase {
   constructor(private deliverersRepository: DeliverersRepository) {}
 
   async execute({
     id,
-  }: GetDelivererByIdUseCaseRequest): Promise<GetDelivererUseCaseReponse> {
+  }: DeleteDelivererUseCaseRequest): Promise<DeleteDelivererUseCaseResponse> {
     const deliverer = await this.deliverersRepository.findById(id)
 
     if (!deliverer) {
       return left(new ResourceNotFoundError())
     }
 
-    return right({
-      deliverer,
-    })
+    await this.deliverersRepository.delete(deliverer)
+
+    return right({})
   }
 }

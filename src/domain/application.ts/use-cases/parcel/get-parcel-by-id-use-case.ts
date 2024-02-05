@@ -1,7 +1,7 @@
 import { Either, left, right } from '@/core/either'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { Parcel } from '@/domain/enterprise/entities/parcel'
-import { ParcelsRepository } from '../repositories/parcels-repository'
+import { ParcelsRepository } from '../../repositories/parcels-repository'
 
 interface GetParcelByIdUseCaseRequest {
   id: string

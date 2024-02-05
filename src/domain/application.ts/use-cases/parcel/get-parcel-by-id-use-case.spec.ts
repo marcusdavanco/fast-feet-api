@@ -1,5 +1,5 @@
 import { InMemoryParcelsRepository } from 'test/repositories/in-memory-parcels-repository'
-import { GetParcelByIdUseCase } from './get-parcel-by-id-use-case'
+import { GetParcelByIdUseCase } from '../parcel/get-parcel-by-id-use-case'
 import { makeParcel } from 'test/factories/make-parcel'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 

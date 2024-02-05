@@ -1,5 +1,5 @@
 import { InMemoryDeliverersRepository } from 'test/repositories/in-memory-deliverers-repository'
-import { DeleteDelivererUseCase } from './delete-deliverer-use-case'
+import { DeleteDelivererUseCase } from '../deliverer/delete-deliverer-use-case'
 import { makeDeliverer } from 'test/factories/make-deliverer'
 
 let inMemoryDeliverersRepository: InMemoryDeliverersRepository

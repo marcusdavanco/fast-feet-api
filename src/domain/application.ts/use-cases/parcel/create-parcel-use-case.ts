@@ -1,6 +1,6 @@
 import { Either, right } from '@/core/either'
 import { Address, Parcel } from '@/domain/enterprise/entities/parcel'
-import { ParcelsRepository } from '../repositories/parcels-repository'
+import { ParcelsRepository } from '../../repositories/parcels-repository'
 import { Status } from '@/domain/enterprise/entities/status'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 

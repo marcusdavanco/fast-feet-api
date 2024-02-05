@@ -1,6 +1,7 @@
 import { InMemoryParcelsRepository } from 'test/repositories/in-memory-parcels-repository'
-import { UpdateParcelInformationUseCase } from './update-parcel-information-use-case'
+
 import { makeParcel } from 'test/factories/make-parcel'
+import { UpdateParcelInformationUseCase } from './update-parcel-information-use-case'
 
 let inMemoryParcelRepository: InMemoryParcelsRepository
 let sut: UpdateParcelInformationUseCase

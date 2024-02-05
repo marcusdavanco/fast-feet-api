@@ -1,5 +1,5 @@
 import { InMemoryDeliverersRepository } from 'test/repositories/in-memory-deliverers-repository'
-import { UpdateDelivererInformationUseCase } from './update-deliverer-information-use-case'
+import { UpdateDelivererInformationUseCase } from '../deliverer/update-deliverer-information-use-case'
 import { makeDeliverer } from 'test/factories/make-deliverer'
 
 let inMemoryDeliverersRepository: InMemoryDeliverersRepository
