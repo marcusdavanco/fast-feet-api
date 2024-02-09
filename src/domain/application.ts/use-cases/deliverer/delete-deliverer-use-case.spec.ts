@@ -30,7 +30,6 @@ describe('DeleteDelivererUseCase', async () => {
 
     const result = await sut.execute({ id: 'non-existing-id' })
 
-    console.log(result)
     expect(result.value).toBeInstanceOf(ResourceNotFoundError)
   })
 })

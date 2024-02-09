@@ -30,6 +30,7 @@ describe('GetParcelByIdUseCase', async () => {
 
     const result = await sut.execute({ id: 'non-existent-id' })
 
+    expect(result.isLeft()).toBe(true)
     expect(result.value).toBeInstanceOf(ResourceNotFoundError)
   })
 })
