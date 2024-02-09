@@ -13,12 +13,15 @@ describe('Get Deliverer By Id', () => {
   })
 
   it('Should be able to get a deliverer by id', async () => {
-    const newDeliverer = makeDeliverer(undefined, new UniqueEntityID())
+    const newDeliverer = makeDeliverer(
+      undefined,
+      new UniqueEntityID('deliverer-01'),
+    )
 
     await inMemoryDeliverersRepository.create(newDeliverer)
 
     const result = await sut.execute({
-      id: newDeliverer.id.toString(),
+      id: 'deliverer-01',
     })
 
     if (result.isRight()) {
