@@ -5,14 +5,14 @@ import { Status } from '@/domain/enterprise/entities/status'
 let inMemoryParcelsRepository: InMemoryParcelsRepository
 let sut: CreateParcelUseCase
 
-describe('Create Parcel Use Case', () => {
+describe('CreateParcelUseCase', () => {
   beforeEach(() => {
     inMemoryParcelsRepository = new InMemoryParcelsRepository()
     sut = new CreateParcelUseCase(inMemoryParcelsRepository)
   })
 
   it('should be able to create a new parcel', async () => {
-    const result = await await sut.execute({
+    const result = await sut.execute({
       delivererId: '1',
       deliveryAddress: {
         city: 'Cidade',
